@@ -10,6 +10,8 @@
   <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
   <!-- BABEL LIBRARY -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <div id="app">React has not rendered yet</div>
@@ -27,14 +29,53 @@
       );
     }
 
+    //Avatar
     function Avatar() {
       return(
         <img src="https://media-exp1.licdn.com/dms/image/C4D03AQFz_68aPUTyhg/profile-displayphoto-shrink_400_400/0?e=1603324800&v=beta&t=CSojh_r0UKGnzDWonWj9Tt4dRoll0K7sDTNSTVKbs-w" alt="profile pic"/>
       );
     }
-    // <Like />
-    // <Share />
-    // <Add />
+
+    //UserName
+    function UserName() {
+      return(
+        <h1>Profile Name</h1>
+      );
+    }
+
+    //GetConnected
+    function GetConnected() {
+      return(
+        <div>
+          <Like />
+          <Share />
+          <Add />
+        </div>
+      );
+    }
+
+
+    function Like() {
+      return(
+        <div>
+          <i className="fas fa fa-heart"></i>
+        </div>
+      );
+    }
+
+    function Share() {
+      return(
+        <div>
+          <i className="fas fa fa-share"></i>
+        </div>
+      );
+    }
+
+    function Add() {
+      return(
+        <div></div>
+      );
+    }
 
     ReactDOM.render(
       <Social />,
