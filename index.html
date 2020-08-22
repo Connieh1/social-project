@@ -20,8 +20,16 @@
 
     // <Social />
     function Social() {
+      const socialStyle = {
+        height: 300,
+        width: 200,
+        padding: 0,
+        backgroundColor: "#FFF",
+        WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+        filter: "drop-shadow(0px 0px 5px #555)"
+      }
       return(
-        <div>
+        <div style={socialStyle}>
           <Avatar />
           <UserName />
           <GetConnected />
@@ -31,8 +39,15 @@
 
     //Avatar
     function Avatar() {
+      const avatarStyle = {
+        marginLeft: 20,
+        marginTop: 20,
+        height: 150,
+        width: 150,
+        borderRadius: "50%"
+      }
       return(
-        <img src="https://media-exp1.licdn.com/dms/image/C4D03AQFz_68aPUTyhg/profile-displayphoto-shrink_400_400/0?e=1603324800&v=beta&t=CSojh_r0UKGnzDWonWj9Tt4dRoll0K7sDTNSTVKbs-w" alt="profile pic"/>
+        <img src="https://media-exp1.licdn.com/dms/image/C4D03AQFz_68aPUTyhg/profile-displayphoto-shrink_400_400/0?e=1603324800&v=beta&t=CSojh_r0UKGnzDWonWj9Tt4dRoll0K7sDTNSTVKbs-w" alt="profile pic" style={avatarStyle}/>
       );
     }
 
@@ -73,7 +88,9 @@
 
     function Add() {
       return(
-        <div></div>
+        <div>
+          <i className="fas fa fa-users"></i>
+        </div>
       );
     }
 
