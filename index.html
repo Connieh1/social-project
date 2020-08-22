@@ -21,6 +21,7 @@
     // <Social />
     function Social() {
       const socialStyle = {
+        display: 'inline-block',
         height: 300,
         width: 200,
         padding: 0,
@@ -53,8 +54,13 @@
 
     //UserName
     function UserName() {
+      const userNameStyle = {
+        fontsize: 24,
+        fontFamily: "Arial, Helvetica, sans-serif",
+        margin: 20
+      }
       return(
-        <h1>Profile Name</h1>
+        <h1 style={userNameStyle}>Profile Name</h1>
       );
     }
 
@@ -69,11 +75,15 @@
       );
     }
 
+    const iconStyle = {
+      margin:20
+    }
+
 
     function Like() {
       return(
         <div>
-          <i className="fas fa fa-heart"></i>
+          <i className="fa fa-heart" aria-hidden="true" style={iconStyle}></i>
         </div>
       );
     }
@@ -81,7 +91,7 @@
     function Share() {
       return(
         <div>
-          <i className="fas fa fa-share"></i>
+          <i className="fa fa-share" aria-hidden="true" style={iconStyle}></i>
         </div>
       );
     }
@@ -89,7 +99,7 @@
     function Add() {
       return(
         <div>
-          <i className="fas fa fa-users"></i>
+          <i className="fa fa-users" aria-hidden="true" style={iconStyle}></i>
         </div>
       );
     }
