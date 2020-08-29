@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- REACT LIBRARY -->
+  <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <!-- REACT DOM LIBRARY -->
+  <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+  <!-- BABEL LIBRARY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Social</title>
+</head>
+<body>
+  <div id="app">React has not rendered yet</div>
+
+  <script type="text/babel">
+
+    // <Social />
+    function Social(props) {
+      const person = props.people.map(function(person){
+        const socialStyle = {
+          display: 'inline-block',
+          margin: 20,
+          height: 300,
+          width: 200,
+          padding: 0,
+          backgroundColor: "#FFF",
+          WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+          filter: "drop-shadow(0px 0px 5px #555)"
+        };
+        return (
+          <div style={socialStyle} >
+            <Avatar img={person.img}/>
+            <UserName name={person.name}/>
+            <GetConnected />
+          </div>
+        );
+      });
+      return(
+      <div>{person}</div>
+      );
+      }
+
+    //Avatar
+    function Avatar(props) {
+      const avatarStyle = {
+        marginLeft: 25,
+        marginTop: 20,
+        height: 150,
+        width: 150,
+        borderRadius: "50%"
+      }
+      return(
+        <img src={props.img} style={avatarStyle}/>
+      );
+    }
+
+    //UserName
+    function UserName(props) {
+      const userNameStyle = {
+        fontSize: 24,
+        textAlign: "center",
+        fontFamily: "Arial, Helvetica, sans-serif",
+        margin: 20
+      }
+      return(
+        <h1 style={userNameStyle}>{props.name}</h1>
+      );
+    }
+
+    //GetConnected
+    function GetConnected() {
+      const getConnectedStyle = {
+        marginLeft: 15
+      }
+      return(
+        <div style={getConnectedStyle}>
+          <Like />
+          <Share />
+          <Add />
+        </div>
+      );
+    }
+
+    const iconStyle = {
+      margin:20
+    }
+
+
+    function Like() {
+      return(
+          <i className="fa fa-heart" aria-hidden="true" style={iconStyle}></i>
+      );
+    }
+
+    function Share() {
+      return(
+          <i className="fa fa-share" aria-hidden="true" style={iconStyle}></i>
+      );
+    }
+
+    function Add() {
+      return(
+          <i className="fa fa-users" aria-hidden="true" style={iconStyle}></i>
+      );
+    }
+
+    const people = [{name: "Rob", img: "https://pbs.twimg.com/profile_images/699422966556168193/zUm4vhAo.jpg"},
+                    {name: "Charles", img:"https://static.pexels.com/photos/38630/bodybuilder-weight-training-stress-38630.jpeg"},
+                    {name: "Natalie", img: "https://static.pexels.com/photos/509195/pexels-photo-509195.jpeg"},
+                    {name: "Jenny", img: "https://static.pexels.com/photos/517061/pexels-photo-517061.jpeg"},
+                    {name: "Sarah", img: "https://static.pexels.com/photos/324658/pexels-photo-324658.jpeg"},
+                    {name: "Josh", img: "https://static.pexels.com/photos/428339/pexels-photo-428339.jpeg"},
+                    {name: "Kenny", img: "https://static.pexels.com/photos/325682/pexels-photo-325682.jpeg"},
+                    {name: "John", img: "https://static.pexels.com/photos/45882/man-crazy-funny-dude-45882.jpeg"},
+                    {name: "Alisha", img: "https://static.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg"}
+                    ];
+
+
+    ReactDOM.render(
+      <Social people={people} />,
+    document.getElementById("app")
+  );
+
+
+  </script>
+</body>
+</html>
